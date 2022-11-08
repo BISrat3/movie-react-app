@@ -1,7 +1,18 @@
 import React from 'react'
+import Movie from './Movie'
+import classes from './MovieList.module.css'
 
-export default function MovieList() {
+export default function MovieList(props) {
   return (
-    <div>MovieList</div>
+    <ul className={classes['movies-list']}>
+      {props.movies.map((movie) => (
+        <Movie
+          key={movie.id}
+          title={movie.title}
+          releaseDate={movie.releaseDate}
+          openingText={movie.openingText}
+        />
+      ))}
+    </ul>
   )
 }

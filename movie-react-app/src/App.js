@@ -1,7 +1,7 @@
-import { response } from "express";
 import React,{useEffect, useState, useCallback} from "react";
 import AddMovie from "./components/AddMovie";
 import MovieList from "./components/MovieList";
+import './App.css'
 
 function App() {
   const [movies, setMovies] = useState([])

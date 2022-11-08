@@ -1,7 +1,8 @@
 import React,{useRef} from 'react'
+import classes from './AddMovie.module.css'
 
-export default function AddMovie() {
-    
+export default function AddMovie(props) {
+
     const titleRef = useRef('')
     const openingTextRef = useRef('')
     const releaseDateRef = useRef('')
@@ -9,7 +10,7 @@ export default function AddMovie() {
     function submitHandler(event){
     event.preventDefault()
 
-    const movie ={
+    const movie = {
         title: titleRef.current.value,
         openingText: openingTextRef.current.value,
         releaseDate: releaseDateRef.current.value,
