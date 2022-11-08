@@ -16,9 +16,11 @@ function App() {
             id: movieData.episode_id,
             title: movieData.title,
             openingText: movieData.opening_crawl,
-            
+            releaseDate: movieData.release_date
+
           }
         })
+        setMovies(transformedMovies)
       })
   }
 
