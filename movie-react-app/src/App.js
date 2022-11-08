@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { response } from "express";
+import React,{useState} from "react";
+import MovieList from "./components/MovieList";
 
 function App() {
+  const [movies, setMovies] = useState([])
+
+  function fetchMovieHandler(){
+    fetch('https://swapi.dev/api/films/')
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        const transformedMovies = data.results.map((movieData) => {
+          return {
+            id: movieData.episode_id,
+            title: movieData.title,
+            openingText: movieData.opening_crawl,
+
+          }
+        })
+      })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment >
+      <section>
+        <button>Fetch Movies</button>
+      </section>
+      <section>
+        <MovieList movies={dummyMovies}/>
+      </section>
+    </React.Fragment>
   );
 }
 
