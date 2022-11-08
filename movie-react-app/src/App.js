@@ -16,7 +16,7 @@ function App() {
             id: movieData.episode_id,
             title: movieData.title,
             openingText: movieData.opening_crawl,
-
+            
           }
         })
       })
@@ -28,7 +28,7 @@ function App() {
         <button>Fetch Movies</button>
       </section>
       <section>
-        <MovieList movies={dummyMovies}/>
+        <MovieList movies={movies}/>
       </section>
     </React.Fragment>
   );

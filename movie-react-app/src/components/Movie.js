@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default function Movie() {
+export default function Movie(props) {
   return (
-    <div>Movie</div>
+    <li className={classes.movie}>
+        <h2>{props.title}</h2>
+        <h3>{props.releaseDate}</h3>
+        <p>{props.openingText}</p>
+    </li>
   )
 }
