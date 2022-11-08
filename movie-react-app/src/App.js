@@ -27,10 +27,10 @@ function App() {
   return (
     <React.Fragment >
       <section>
-        <button>Fetch Movies</button>
+        <button onClick={fetchMovieHandler}> Fetch Movies</button>
       </section>
       <section>
-        <MovieList movies={movies}/>
+        <MovieList movies={movies} />
       </section>
     </React.Fragment>
   );
