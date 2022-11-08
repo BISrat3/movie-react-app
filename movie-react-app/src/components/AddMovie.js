@@ -8,14 +8,13 @@ export default function AddMovie(props) {
     const releaseDateRef = useRef('')
 
     function submitHandler(event){
-    event.preventDefault()
+        event.preventDefault()
 
     const movie = {
         title: titleRef.current.value,
         openingText: openingTextRef.current.value,
         releaseDate: releaseDateRef.current.value,
     }
-
     props.onAddMovie(movie)
     }
 

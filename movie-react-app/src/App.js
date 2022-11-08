@@ -8,8 +8,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
-
-
   // async function fetchMovieHandler(){
     const fetchMovieHandler = useCallback(async () => {
     setIsLoading(true)
@@ -21,7 +19,8 @@ function App() {
       throw new Error('Something went wrong')
     }
     const data = await response.json()
-      const loadedMoives = []
+
+    const loadedMoives = []
 
       for (const key in data){
         loadedMoives.push({
@@ -74,7 +73,7 @@ function App() {
     if(movies.length >0){
       content = <MovieList movies={movies} />
     }
-    if(movies.length === 0 ){
+    if(error){
       content = <p>{error}</p>
     }
     if(isLoading){
